@@ -9,7 +9,6 @@ jobs:
     name: Revert 
     runs-on: ubuntu-latest
     steps:
-    steps:
       - id: revert
         uses: thebritican/fetch-latest-release@v1.0.3
         with:
