@@ -1,3 +1,5 @@
+name: Revert
+
 on: 
   release:
     types: [deleted]
