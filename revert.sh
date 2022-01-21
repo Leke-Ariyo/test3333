@@ -18,4 +18,4 @@ set -o xtrace
 
 git fetch origin main
 git reset --hard $COMMIT_TO_REVERT
-git push origin master
+git push origin main
