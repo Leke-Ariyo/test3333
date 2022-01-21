@@ -12,7 +12,7 @@ jobs:
 
       - uses: actions/checkout@v2
         with: 
-          ref: 'master'
+          ref: 'main'
 
       - name: Revert
         run: ./revert.sh ${{ github.event.release.name }} ${{ github.repository }}
