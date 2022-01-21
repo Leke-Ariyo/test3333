@@ -21,11 +21,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: Release $GITHUB_RUN_NUMBER
-          release_name: Release $GITHUB_RUN_NUMBER
+          tag_name: $GITHUB_SHA
+          release_name: $GITHUB_SHA
           body: |
             Changes in this Release
             - First Change
             - Second Change
           draft: false
           prerelease: false
+
+on: 
+  release:
+    types: [deleted]
+    steps:
+      - id: revert
+        uses: thebritican/fetch-latest-release@v1.0.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@v2
+        with: 
+          ref: ${{ steps.latest.outputs.tag_name }}
+
+      - name: Revert
+        run: ./deploy.sh $GITHUB_SHA
