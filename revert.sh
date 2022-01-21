@@ -10,7 +10,7 @@ echo $1
 echo $2
 echo "yo"
 
-git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 git config --global user.email "revert@github.com"
 git config --global user.name "GitHub Revert Action"
 
