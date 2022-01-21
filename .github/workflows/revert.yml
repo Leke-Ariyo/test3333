@@ -9,14 +9,8 @@ jobs:
     name: Revert 
     runs-on: ubuntu-latest
     steps:
-      - id: revert
-        uses: thebritican/fetch-latest-release@v1.0.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/checkout@v2
-        with: 
-          ref: ${{ steps.revert.outputs.tag_name }}
 
       - name: Revert
-        run: ./revert.sh ${{ steps.revert.outputs.name }} ${{ github.repository }}
+        run: ./revert.sh ${{ github.event.release.name }} ${{ github.repository }}
