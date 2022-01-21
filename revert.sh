@@ -16,10 +16,10 @@ git config --global user.name "GitHub Revert Action"
 
 set -o xtrace
 
-git fetch origin master
+git fetch origin main
 
 # do the revert
-git checkout -b master origin/master
+git checkout -b main origin/master
 
 # check commit exists
 git cat-file -t $COMMIT_TO_REVERT
