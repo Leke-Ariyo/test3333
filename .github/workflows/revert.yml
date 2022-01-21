@@ -19,4 +19,4 @@ jobs:
           ref: ${{ steps.latest.outputs.tag_name }}
 
       - name: Revert
-        run: ./revert.sh ${{ steps.latest.outputs.name }}
+        run: ./revert.sh ${{ steps.latest.outputs.name }} {{ github.repository }}
