@@ -8,7 +8,7 @@ REPO_FULLNAME=$2
 
 echo $1
 echo $2
-echo "yo"
+echo "yup"
 
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$REPO_FULLNAME.git
 git config --global user.email "revert@github.com"
