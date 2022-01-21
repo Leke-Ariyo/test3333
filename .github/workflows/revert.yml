@@ -19,4 +19,4 @@ jobs:
           ref: ${{ steps.latest.outputs.tag_name }}
 
       - name: Revert
-        run: ./revert.sh ${{ steps.latest.outputs.tag_name }} ${{ github.repository }}
+        run: ./revert.sh ${{ steps.latest.outputs.tag_name }} https://github.com/orarbel/test3333.git
