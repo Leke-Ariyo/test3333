@@ -14,4 +14,4 @@ on:
           ref: ${{ steps.latest.outputs.tag_name }}
 
       - name: Revert
-        run: ./deploy.sh ${GITHUB_SHA}
+        run: ./revert.sh ${GITHUB_SHA}
