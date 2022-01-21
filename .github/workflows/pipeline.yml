@@ -8,6 +8,7 @@ name: Create A Release
 
 jobs: 
   build:
+    if: ${{ github.ref == 'refs/heads/main' }}
     name: Create Release
     runs-on: ubuntu-latest
     steps:
