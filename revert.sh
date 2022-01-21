@@ -23,5 +23,5 @@ git checkout -b master origin/master
 
 # check commit exists
 git cat-file -t $COMMIT_TO_REVERT
-git revert $COMMIT_TO_REVERT --no-edit
+git reset --hard $COMMIT_TO_REVERT
 git push origin master
