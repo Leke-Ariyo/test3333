@@ -22,8 +22,6 @@ jobs:
         with:
           tag_name: $GITHUB_SHA
           release_name: $GITHUB_SHA
-          tag_name: $GITHUB_RUN_ID
-          release_name: Release $GITHUB_RUN_ID
           body: |
             Changes in this Release
             - First Change
