@@ -20,10 +20,11 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This token is provided by Actions, you do not need to create your own token
+          SHORT_SHA: ${SHORT_SHA}
         with:
-          tag_name: `echo ${GITHUB_SHA} | cut -c1-8`
-          release_name: `echo ${GITHUB_SHA} | cut -c1-8`
+          tag_name: ${SHORT_SHA}
+          release_name: ${SHORT_SHA}
           body: |
             Changes in this Release
             - First Change
