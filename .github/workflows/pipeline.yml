@@ -6,8 +6,9 @@ on: [push]
 
 name: Create A Release
 
-jobs:
+jobs: 
   build:
+    if: ${{ github.ref == 'refs/heads/main' }}
     name: Create Release
     runs-on: ubuntu-latest
     steps:
@@ -20,8 +21,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: Release
-          release_name: Release
+          tag_name: Release $GITHUB_RUN_NUMBER
+          release_name: Release $GITHUB_RUN_NUMBER
           body: |
             Changes in this Release
             - First Change
